@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/lax.js" ></script>
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            flex-direction: column;
+        }
+        #main1 {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+        }
+        #main2 {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        #cube {
+            position: absolute;
+            height: 350px;
+            width: 350px;
+            background-color: white;
+            border: 25px solid #50FF94;
+            top: 30%;
+            left: 15%;
+        }
+        #circleOne {
+            position: absolute;
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            transform: rotate(75deg);
+            border: 10px solid #FF3028;
+            border-radius: 50%;
+            top: 35%;
+            left: 35%;
+        }
+        #circleTwo {
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            transform: rotate(75deg);
+            border: 10px solid #482ff7;
+            border-radius: 50%;
+            top: 40%;
+            left: 42%;
+        }
+        #main3 {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="main1">Scroll Down</div>
+    <div id="main2">
+        <div id="cube" class="box lax" data-lax-preset="spin fadeInOut zoomIn"></div>
+        <div id="circleOne" class="box lax" data-lax-preset="driftLeft"></div>
+        <div id="circleTwo" class="box lax" data-lax-preset="driftRight"></div>
+    </div>
+    <div id="main3">Scroll Up</div>
+    <script>
+        window.onload = function() {
+	lax.setup() // init
+
+	const updateLax = () => {
+		lax.update(window.scrollY)
+		window.requestAnimationFrame(updateLax)
+	}
+
+	window.requestAnimationFrame(updateLax)
+}
+    </script>
+</body>
+</html>

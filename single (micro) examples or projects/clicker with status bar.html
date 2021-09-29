@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            background-color: #226666;
+        }
+        #centerBoxOne {
+            display: flex;
+            background-color: #aa8439;
+            height: 225px;
+            width: 350px;
+            margin-top: 97px ;
+            margin-left: 400px;
+            justify-content: center;
+            align-items: center;
+        }
+        #centerBoxTwo {
+            display: flex;
+            background-color: #aa8439;
+            height: 225px;
+            width: 500px;
+            margin-top: 322px;
+            margin-left: -500px;
+            justify-content: center;
+            align-items: center;
+        }
+        #score {
+            display: flex;
+            background-color: #aa6c39;
+            height: 100px;
+            width: 200px;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+        }
+        #button {
+            display: flex;
+            background-color: #2e4272;
+            height: 200px;
+            width: 300px;
+            justify-content: center;
+            align-items: center;
+            user-select: none; 
+        }
+        #forIndicator {
+            display: flex;
+            background-color: #aa8439;
+            height: 225px;
+            width: 150px;
+            margin-top: 97px;
+            justify-content: center;
+            align-items: center;
+        }
+        #indicator {
+            display: flex;
+            background-color: red;
+            height: 50px;
+            width: 50px;
+        }
+        div {
+            position: absolute;
+            display: flex;
+            height: 350px;
+            width: 100%;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            border-radius: 25px;
+            top: 130px;
+            visibility: hidden;
+
+        }
+        .isVisible {
+            visibility: visible;
+        }
+        .game {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body class="clicker">
+   <span id="centerBoxOne">
+       <span id="score">Всего нажатий: 0</span>
+   </span>
+   <span id="forIndicator">
+       <span id="indicator"></span>
+   </span>
+   <span id="centerBoxTwo">
+       <span id="button">Осталось нажать: 40</span>
+   </span>
+   <div id="div">Поздравляю с завершением нашей короткой игры!! !</div>
+   <script>
+        let score = document.querySelector('#score')
+        let button = document.querySelector('#button')
+        let progress = document.querySelector('#indicator')
+        let happyEnd = document.querySelector('div')
+        let game = document.querySelector('.game')
+        let centerBoxOne = document.querySelector('#centerBoxOne')
+        let forIndicator = document.querySelector('#forIndicator')
+        let centerBoxTwo = document.querySelector('#centerBoxTwo')
+        let b = 39
+        let s = 1
+        button.addEventListener('click', clicker)
+        function clicker() {
+            button.textContent = `Осталось нажать: ${b--}` 
+            score.textContent = `Всего нажатий: ${s++}`
+            if (s == 6) {
+                progress.style.backgroundColor = 'rgb(255, 19, 15)'
+            } else if (s == 11) {
+                progress.style.backgroundColor = 'rgb(255, 63, 15)'
+            } else if (s == 16) {
+                progress.style.backgroundColor = 'rgb(255, 103, 15)'
+            } else if (s == 21) {
+                progress.style.backgroundColor = 'rgb(255, 159, 15)'
+            } else if (s == 26) {
+                progress.style.backgroundColor = 'rgb(255, 211, 15)'
+            } else if (s == 31) {
+                progress.style.backgroundColor = 'rgb(131, 255, 15)'
+            } else if (s == 36) {
+                progress.style.backgroundColor = 'rgb(30, 255, 0)'
+            } else if (b == -1) {
+                happyEnd.classList.add('isVisible')
+                centerBoxOne.classList.add('game')
+                centerBoxTwo.classList.add('game')
+                forIndicator.classList.add('game')
+                progress.classList.add('game')
+                score.classList.add('game')
+            }
+        }
+   </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+@include media('<=phone') {
+    .mainpage {
+        display: flex;
+        height: 640px;
+        width: 531px;
+        background-position: -61px 0;
+    }
+}

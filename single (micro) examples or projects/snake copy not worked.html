@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #252523;
+        }
+        #game {
+            background-color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="game" height="600" width="600"></canvas>
+    <script>
+        const canv = document.querySelector('#game')
+        const ctx = canv.getContext("2d")
+        const canvHeight = canv.clientHeight
+        const canvWidth = canv.clientWidth
+        const size = canvHeight / 20
+        const gameLoop = setInterval(game, 1500)
+
+        let Snake = function () {
+            this.size = size
+            this.color = 'green'
+            this.x = 0
+            this.y = 0
+            this.speed = this.size
+            this.speedX = this.size
+            this.speedY = 0
+            this.tail = [[0, 0]]
+
+
+            this.show = function () {
+                ctx.fillStyle = this.color
+
+                for (let i = 0; i < this.tail.length; i++) {
+                    const el = this.tail[i]
+                    ctx.fillRect(el[0], el[1], this.size, this.size)
+                }
+            }
+            this.update = function () {
+                this.x += this.speedX
+                this.y += this.speedY
+                
+                for(let i = 0; i < this.tail.length - 1; i++) {
+                    this.tail[i] = this.tail[i + 1]
+                }
+                this.tail[this.tail.length - 1] = [this.x, this.y]
+                console.log(this.x)
+                // console.log(this.y)
+                console.log(this.size)
+                console.log(this.tail.length)
+                console.log(this.tail)
+            }
+        }
+
+        let s = new Snake
+
+        function game() {
+            ctx.clearRect(0, 0, canvWidth, canvHeight)
+
+            s.show()
+            s.update()
+        }
+    </script>
+</body>
+</html>

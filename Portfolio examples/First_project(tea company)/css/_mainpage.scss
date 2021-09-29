@@ -1,0 +1,167 @@
+.mainpage {
+    // display: flex; <-- Флекс в данном случае применяется для wrapper (он выступает в роли container) класса
+    height: 100vh; 
+    background-image: url('../img/background-mainpage.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    &::before {
+        content: '';
+        background-color: rgba(187, 223, 132, 0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+    &-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            z-index: 1000;
+            &__flowerOne {
+                position: absolute;
+                background-image: url('../img/flower.png');
+                background-size: contain;
+                height: 205px;
+                width: 205px;
+                top: 5%;
+                z-index: 1;
+               
+            }
+            &__flowerTwo {
+                position: absolute;
+                background-image: url('../img/flower.png');
+                background-size: contain;
+                height: 160px;
+                width: 160px;
+                left: 60%;
+                z-index: 1;
+            }
+            &__flowerThree {
+                position: absolute;
+                background-image: url('../img/flower.png');
+                background-size: contain;
+                height: 62px;
+                width: 62px;
+                top: 85%;
+                left: 2%;
+                z-index: 1;
+            }
+        &-herobox {
+            position: relative;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 80%;
+            margin-left: 10%;
+            margin-top: 20%;
+
+            &__motto {
+                display: flex;
+                font-size: 72px;
+                font-family: $headers;
+                margin-bottom: 20px;
+            }
+            &__subtitle {
+                display: flex;
+                font-size: 19px;
+                margin-bottom: 60px;
+            }
+            &__calltoaction {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 36px;
+                font-family: $texts;
+                height: 80px;
+                width: 328px;
+                background-color: #A9D287;
+                border-radius: 40px;
+                z-index: 1000;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            
+        }
+        &-pointer {
+            z-index: 1000;
+            align-self: center;
+            &__stroke {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 62px;
+                width: 62px;
+                border: 3px white solid;
+                border-radius: 40px;
+            }
+            &__arrow {
+                background-image: url('../img/icons8-expand-arrow-32.png');
+                height: 33px;
+                width: 33px;
+            }
+            
+        }
+    }
+}
+
+
+@include media('<=tablet') {
+    .mainpage {
+        &-wrapper {
+            &-herobox {
+                display: flex;
+                align-items: center;
+                margin-right: 10%;
+                &__motto {
+                    font-size: 60px;
+                    margin-bottom: 1%;
+                    
+                }
+                &__subtitle {
+                    font-size: 20px;
+
+                }
+               
+            }
+        }
+    }
+}   
+
+
+@include media('<=phone') {
+    .mainpage {
+        height: 100%;
+        &-wrapper {
+            height: 100vh;
+            &__flowerTwo {
+                height: 120px;
+                width: 120px;
+            }
+            &-herobox {
+                &__motto {
+                    font-size: 29px;
+                }
+                &__subtitle {
+                    font-size: 9px;
+                    top: 45%;
+                }
+                &__calltoaction {
+                    font-size: 17px;
+                    height: 38px;
+                    width: 155px;
+                }
+            }
+        }
+    }
+}
+@include media('<=mediumphone') {
+    .mainpage-wrapper-herobox__motto {
+        font-size: 25px;
+    }
+}

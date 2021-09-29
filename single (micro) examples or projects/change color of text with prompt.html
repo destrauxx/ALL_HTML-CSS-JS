@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title"></h1>
+    <p id="subtitle"></p>
+    <script>
+        let title = prompt("Введите текст для заголовка")
+        let titleColor = prompt("Введите цвет для заголовка")
+        let subtitle = prompt("Введите текст для подзаголовка")
+        let subtitleColor = prompt("Введите цвет для подзаголовка")
+
+        let titleUser = document.getElementById("title")
+        let subtitleUser = document.getElementById("subtitle")
+
+        titleUser.textContent = title
+        titleUser.style.color = titleColor
+        subtitleUser.textContent = subtitle
+        subtitleUser.style.color = subtitleColor
+    </script>
+</body>
+</html>

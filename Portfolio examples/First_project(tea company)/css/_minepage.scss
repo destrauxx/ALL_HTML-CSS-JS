@@ -1,0 +1,94 @@
+.mainpage {
+    display: flex;
+    height: 666px;
+    width: 1310px;
+    background-image: url('../img/background-mainpage.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+        &-wrapper {
+            height: 100vh;
+            width: 101vw;
+            background-color: rgba(187, 223, 132, 0.5);
+            &__flowerOne {
+                display: flex;
+                position: absolute;
+                background-image: url('../img/flower.png');
+                background-size: contain;
+                height: 205px;
+                width: 205px;
+                top: 373px;
+                left: 789px;
+            }
+            &__flowerTwo {
+                display: flex;
+                position: absolute;
+                background-image: url('../img/flower.png');
+                background-size: contain;
+                height: 160px;
+                width: 160px;
+                top: 74px;
+                left: 62px;
+            }
+            &__flowerThree {
+                display: flex;
+                position: absolute;
+                background-image: url('../img/flower.png');
+                background-size: contain;
+                height: 62px;
+                width: 62px;
+                top: 58px;
+                left: 1097px;
+                transform: translate(15deg);
+            }
+        &-herobox {
+            &__motto {
+                display: flex;
+                font-size: 72px;
+                font-family: $headers;
+                margin-left: 141px;
+                margin-top: 191px;
+            }
+            &__subtitle {
+                display: flex;
+                font-size: 19px;
+                margin-left: 149px;
+            }
+            &__calltoaction {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 36px;
+                font-family: $texts;
+                height: 80px;
+                width: 328px;
+                background-color: #A9D287;
+                border-radius: 40px;
+                margin-left: 141px;
+                margin-top: 120px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            
+        }
+        &-pointer {
+            &__stroke {
+                display: flex;
+                height: 62px;
+                width: 62px;
+                border: 3px white solid;
+                margin-top: 48px;
+                margin-left: 624px;
+                justify-content: center;
+                align-items: center;
+                border-radius: 40px;
+            }
+            &__arrow {
+                background-image: url('../img/icons8-expand-arrow-32.png');
+                height: 33px;
+                width: 33px;
+            }
+            
+        }
+    }
+}

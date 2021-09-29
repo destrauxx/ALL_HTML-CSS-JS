@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Открытка</title>
+    <style>
+    .item1 {
+        border-radius: 20px;
+    border: 15px solid #ffc217;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffc217;  
+    justify-content: center;
+    align-items: center;
+    }
+    .item2 {
+        border-radius: 20px;
+    border: 15px solid #ffc217;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffc217;  
+    justify-content: center;
+    align-items: center; 
+    }
+    .item3 {        
+        border-radius: 20px;
+    border: 15px solid #ffc217;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffc217;  
+    justify-content: center;
+    align-items: center; 
+    }
+    .container {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .item1, .item2, .item3 {
+        border: 7px solid #2985b6;
+        padding: 15px;
+    }
+    body {
+        margin: 0;
+        display: flex;
+        height: 100vh;
+        background-color: #FF592e;
+        overflow: hidden;
+        }
+    .manrin {
+        background-image: url(mandarin.png);
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: -50px;
+        animation: falling 20s .2s linear infinite
+    }
+    @keyframes falling {
+        to {
+            top: 100vh;
+            transform: rotate(720deg);
+        }
+    }
+    .manrin:nth-child(1){
+        left: 18vw;
+        animation-delay: 7s;
+    }
+    .manrin:nth-child(2){
+        left: 29vw ;
+        animation-delay: 0s;
+    }
+    .manrin:nth-child(3){
+        left: 37vw ;
+        animation-delay: 8s;
+    }
+    .manrin:nth-child(4){
+        left: 59vw;
+        animation-delay: 6s;
+    }
+    .manrin:nth-child(5){
+        left: 68vw ;
+        animation-delay: 11s;
+    }
+    .manrin:nth-child(6){
+        left: 77vw;
+        animation-delay: 2s;
+    }
+    </style>
+</head>
+<body>
+    <div class="manrin"></div>
+    <div class="manrin"></div>
+    <div class="manrin"></div>
+    <div class="manrin"></div>
+    <div class="manrin"></div>
+    <div class="manrin"></div>
+    <div class="container">
+        <div class="item1">
+            Поздравляю с Новым Годом!
+        </div>
+        <div class="item2">
+            Сказка новогодняя
+             <br>В двери постучит,
+                <br>Дед Мороз с подарками
+                    <br>В гости к нам летит...
+
+                        <br>Будет очень весело,
+                            <br>Будем танцевать,
+                                <br>В Новый год всех радостно,
+                                    <br>Дружно поздравлять!
+        </div>
+        <div class="item3">
+    Дед Мороз — хороший дед:
+    <br>В шубу красную одет,
+        <br>Он с седою бородой,
+            <br>Он красивый и большой!
+
+                <br>Он с подарками всегда,
+                    <br>Он не плачет никогда,
+                        <br>Он танцует и смеется,
+                            <br>Вам он тоже улыбнется!
+        </div>
+    </div>
+</body>
+</html>

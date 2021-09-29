@@ -1,0 +1,100 @@
+.aboutpage-wrapper {
+    display: flex;
+    z-index: 1000;
+    position: relative;
+    &__flowerOne {
+        display: flex;
+        position: absolute;
+        background-image: url('../img/flower_2.png');
+        background-size: contain;
+        height: 222px;
+        width: 222px;
+        z-index: 1;
+        top: 15%;
+        left: 5%;
+    }
+    &__flowerTwo {
+        display: flex;
+        position: absolute;
+        background-image: url('../img/flower_2.png');
+        background-size: contain;
+        height: 84px;
+        width: 84px;
+        z-index: 1;
+        top: 75%;
+        left: 55%;
+    }
+
+    &__photo {
+        background-image: url('../img/about.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        flex-basis: 50%;
+    }
+    
+    &-herobox {
+        background-color: $about;
+        height: 680px;
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__header {
+            font-family: $headers;
+            color: $forText;
+            font-size: 45px;
+            position: relative;
+            z-index: 1000;
+        }
+        &__paragraph {
+            font-size: 25px;
+            font-family: $forText;
+            text-align: center;
+            position: relative;
+            z-index: 1000;
+        }
+    }
+}
+
+@include media('<=tablet') {
+    .aboutpage {
+        &-wrapper {
+            &-herobox {
+                &__paragraph {
+                    font-size: 21px;
+                }
+            }
+        
+        }
+    }
+}
+@include media('<=phone') {
+    .aboutpage {
+        &-wrapper {
+            &__flowerOne {
+                height: 100px;
+                width: 100px;
+                top: 16%;
+            }
+            &__flowerTwo {
+                height: 50px;
+                width: 50px;
+                
+            }
+            &-herobox {
+                height: 321px;
+                width: 181px;
+                &__header {
+                    font-size: 21px;
+                }
+                &__paragraph {
+                    font-size: 9px;
+                }
+            }
+        
+        }
+    }
+}

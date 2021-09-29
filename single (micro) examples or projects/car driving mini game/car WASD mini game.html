@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #071e3d;
+        }
+        .car {
+            position: absolute;
+            height: 100px;
+            width: 200px;
+            background-image: url('car.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: scaleX(-1);
+        }
+    </style>
+</head>
+<body>
+    <div id="field"></div>
+    <script>
+        let field = document.querySelector('#field')
+        let Car = function(x, y) {
+            this.car = null
+            this.x = x
+            this.y = y
+        
+            this.create = function() {
+                this.car = document.createElement('div')
+                this.car.classList = 'car'
+                this.car.style.left = this.x +'px'
+                this.car.style.top = this.y + 'px'
+                field.append(this.car)
+            }
+
+
+            this.moveRight = function () {
+                this.x += 1000
+            }
+            this.moveLeft = function() {
+                this.x -= 1000
+            }
+            this.moveUp = function() {
+                this.y -= 1000
+            }
+            this.moveDown = function() {
+                this.y += 1000
+            }
+            this.render = function () {
+                this.car.style.left = this.x + 'px'
+                this.car.style.top = this.y + 'px'
+            }
+        }
+        let player_1 = new Car(50, 200)
+        player_1.create()
+
+        document.addEventListener('keydown', keyPressEvent)
+        function keyPressEvent(event) {
+            keyCode = event.keyCode;
+            if(keyCode === 87 || keyCode === 38) {
+                player_1.moveUp()
+            } else if (keyCode === 68 || keyCode === 39) {
+                player_1.moveRight()
+            } else if (keyCode === 83 || keyCode === 40) {
+                player_1.moveDown()
+            } else if (keyCode === 65 || keyCode === 37) {
+                player_1.moveLeft()
+            }
+            player_1.render()
+        }
+    </script>
+</body>
+</html>

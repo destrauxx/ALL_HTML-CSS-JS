@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            cursor: none;
+        }
+        #circle {
+            display: flex;
+            position: absolute;
+            border-radius: 50% ;
+            background-color: #990089;
+            height: 40px;
+            width: 40px;
+            cursor: none;
+        }
+        .newCircle {
+            display: flex;
+            position: absolute;
+            border-radius: 50% ;
+            background-color: purple;
+            height: 40px;
+            width: 40px;
+            cursor: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="circle"></div>
+    <script>
+        let circle = document.querySelector('#circle')
+        let body = document.querySelector('body')
+        let mouseX = 0
+        let mouseY = 0
+        document.addEventListener('mousemove', circleMove)
+        function circleMove(event) {
+        let circle = document.querySelector('#circle')
+            let positionX = 0
+            let positionY = 0
+            positionX = event.pageX
+            positionY = event.pageY
+            circle.style.left = positionX - 10 + 'px'
+            circle.style.top = positionY - 10 +'px'
+        }
+        document.addEventListener('click', createCircle)
+        function createCircle(event) {
+            let newCircle = document.createElement('div')
+            newCircle.className = 'newCircle'
+            body.appendChild(newCircle)
+            let posX = 0
+            let posY = 0
+            posX = event.pageX
+            posY = event.pageY
+            newCircle.style.left = posX - 10 + 'px'
+            newCircle.style.top = posY - 10 +'px'
+        }
+    </script>
+</body>
+</html>

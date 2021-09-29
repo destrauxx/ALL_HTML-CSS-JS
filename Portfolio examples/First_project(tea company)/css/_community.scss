@@ -1,0 +1,57 @@
+.community {
+    height: 124px;
+    
+    &-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        &__header {
+            color:black;
+            font-size: 26px;
+            font-family: $headers;
+            margin: 10px;
+        }
+        &-icons {
+            display: flex;
+            
+            &__fs {
+                background-image: url('../img/fs.png');
+                background-size: contain;
+                background-position: center;
+                height: 35px;
+                width: 35px;
+                margin: 5px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            &__wu {
+                background-image: url('../img/wu.png');
+                background-size: contain;
+                background-position: center;
+                height: 35px;
+                width: 35px;
+                margin: 5px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            &__vk {
+                background-image: url('../img/vk.png');
+                background-size: contain;
+                background-position: center;
+                height: 35px;
+                width: 35px;
+                margin: 5px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            
+        }
+    }
+}

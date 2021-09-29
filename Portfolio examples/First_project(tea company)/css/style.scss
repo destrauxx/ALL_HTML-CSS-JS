@@ -1,0 +1,33 @@
+@import './colors';
+@import './text_setup';
+@import './breakpoint';
+
+@import './mainpage';
+@import './community';
+@import './aboutpage';
+@import './productpage';
+
+// @import './tabletminepage';
+// @import './tabletaboutpage';
+// @import './tabletproductpage';
+// @import './tabletcommunity';
+
+body {
+    margin: 0;
+    color: $forText;
+    overflow-x: hidden;
+}
+
+.mainpage-wrapper {
+    max-width: 1366px;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+

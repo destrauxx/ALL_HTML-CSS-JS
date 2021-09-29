@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Открытка</title>
+<style>
+    h1 {
+        text-align: center;
+    }
+    .p {
+        text-align: center;
+    }
+    body {
+        margin: 0;
+        display: flex;
+        height: 100vh;
+        background-color: #FF332e;
+        overflow: hidden;
+    }
+.container {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        justify-content: space-evenly;
+    
+     }
+     .snowflake {
+         background-image: url("snowflake.png");
+         background-size: cover;
+         width: 50px;
+         height: 50px;
+         position: absolute;
+         top: -50px;
+         animation: falling 20s .2s linear infinite;
+     }
+     @keyframes falling {
+         to {
+             top: 100vh;
+             transform: rotate(720deg);
+         }
+     }
+     .snowflake:nth-child(1){
+        left: 60vw;
+        animation-delay: 9s;
+     }
+     .snowflake:nth-child(2){
+        left: 35vw;
+        animation-delay: 6s;
+     }
+     .snowflake:nth-child(3){
+        left: 15vw;
+        animation-delay: 4s;
+     }
+     .snowflake:nth-child(4){
+        left: 78vw;
+        animation-delay: 15s;
+     }
+     .snowflake:nth-child(5){
+        left: 47vw ;
+        animation-delay: 14s ;
+     }
+     .snowflake:nth-child(6){
+        left: 89vw;
+        animation-delay: 10s;
+     }
+     .snowflake:nth-child(7){
+        left: 26vw;
+        animation-delay: 20s;
+     }
+     .snowflake:nth-child(8){
+        left: 80vw ;
+        animation-delay: 5s;
+     }
+     .snowflake:nth-child(9){
+        left: 5vw;
+        animation-delay: 13s;
+     }
+     .snowflake:nth-child(10){
+        left: 92vw;
+        animation-delay: 2s;
+     }
+     .item1 {
+        border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffc217;  
+    justify-content: center;
+    align-items: center;
+    border: 7px solid #1294a6;
+        padding: 15px;
+    }
+    .item2 {
+        border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    background-color: #ffc217;  
+    justify-content: center;
+    align-items: center; 
+    border: 7px solid #1294a6;
+        padding: 15px;
+    }
+    </style>
+</head>
+<body>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflakes"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="container">
+        <div class="item1">
+        <div class="p">
+            Наступает Новый год,
+    <BR>Что же он нам принесет?
+        <BR>Много сладостей, тепла,
+            <BR>Счастья, радости сполна!
+
+                <BR>Сказку добрую подарит,
+                    <BR>Улыбнуться всех заставит,
+                        <BR>Деда Мороза приведет,
+                            <BR>Он нам елочку зажжет...
+
+                                <BR> Поздравляем с Новым годом.
+                                    <BR> Пусть идет всё плавным ходом.
+                                        <BR> Счастье с радостью пусть дружат
+                                            <BR>И весь год вам верно служат!
+        </div>
+        </div>
+        <div class="item2">
+            Ярко светит елочка,
+            <BR>Праздника все ждут.
+                <BR>Дед Мороз с Снегурочкой
+                    <BR>В гости к нам идут.
+
+                        <BR>Мы весь год себя вели
+                            <BR>Очень замечательно.
+                                <BR>Маме с папой помогли,
+                                    <BR>Были любознательны.
+
+                                        <BR>Мы учились, веселились,
+                                            <BR>За год очень подросли.
+                                                <BR>И, конечно, заслужили
+                                                    <BR>Мы подарочки свои.
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #252523;
+        }
+        #game {
+            background-color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="game" height="600" width="600"></canvas>
+    <script>
+        let canvas = document.querySelector('#game')
+        let ctx = canvas.getContext('2d')
+        let canvasHeight = canvas.clientHeight
+        let canvasWidth = canvas.clientWidth
+        let size = 20
+        let xP = 300 // Х для панели
+        let yP = 570 // Y для панели)
+
+        document.addEventListener('keypress', keyPressEvent)
+
+        function keyPressEvent(event) {
+            p.move(event.keyCode);
+        }
+    let Circle = function(x, y, size, color) {
+            this.x = x
+            this.y = y
+            this.size = size
+            this.color = color
+            this.dx = 6;
+            this.dy = 5
+
+            this.drawCircle = function() {
+                ctx.beginPath()
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
+                ctx.fillStyle = this.color;
+                ctx.fill()
+            }
+
+            this.move = function() {
+                this.x += this.dx
+                this.y += this.dy
+                this.collision()
+            }
+
+            this.collision = function() {
+                if (this.x + this.size > canvasWidth || this.x - this.size < 0) {
+                    this.dx *= -1
+                }
+                if (this.y + this.size > canvasHeight || this.y - this.size < 0) {
+                    this.dy *= -1
+                }
+            }
+            this.changeDirection = function () {
+                this.dx *= -1
+                this.dy *= -1
+            }
+            
+        }
+
+        let c1 = new Circle(300, 300, 8, 'black')
+        let circles = [c1]
+
+
+        let Panel = function() {
+            this.size = size
+            this.color = 'red'
+            this.x = 300
+            this.y = 570
+
+            this.show = function () {
+                ctx.fillStyle = this.color
+
+                ctx.fillRect(this.x, this.y, this.size * 5, this.size)
+                
+            }
+
+            this.move = function (direction) {
+                if (direction === 97) {
+                    this.x -= 10
+                } else if (direction === 100) {
+                    this.x += 10
+                } 
+                if (this.x + this.size * 5 > canvasWidth) {
+                    this.x = canvasWidth - this.size * 5
+                } else if (this.x < 0) {
+                    this.x = 0
+                }
+            }
+            this.checkCollision = function (ball) {
+                if ((ball.x < this.size * 5 && ball.x + ball.size > this.x) && (ball.y < this.size && ball.y + ball.size > this.x)) {
+                    return true
+                }
+                return false
+            }
+        }
+        let p = new Panel()
+
+        function update() {
+            ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight)
+            
+            p.show()
+            for (let i = 0; i < circles.length; i++) {
+                const c = circles[i]
+                c.move()
+                c.drawCircle()
+                if (p.checkCollision(c)) {
+                    c.changeDirection()
+                }
+               
+            }
+
+            requestAnimationFrame(update)
+        }
+
+        update()
+    </script>
+</body>
+</html>
